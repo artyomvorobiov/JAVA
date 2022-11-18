@@ -21,24 +21,24 @@ public class Main {
         String str = console.nextLine();
         while (!"/end".equals(str)) {
             if (Objects.equals(str, "/r")) {
-                int a = (int) (Math.random() * 4);
-                System.out.print("Отвечает " + students[a] + "\n");
-                if (!incl[a]) {
+                int num_mass = (int) (Math.random() * 4);
+                System.out.print("Отвечает " + students[num_mass] + "\n");
+                if (!incl[num_mass]) {
                     System.out.print("Студента нет на паре, введите /h для помощи  \n");
                 } else {
-                    if (!answer[a]) {
+                    if (!answer[num_mass]) {
                         System.out.print("Присутсвует ли на паре? Введите y, если да \n");
                         String str1 = console.nextLine();
                         if (Objects.equals(str1, "y")) {
-                            incl[a] = true;
-                            int b = (int) (Math.random() * 10);
-                            grades[a] = b;
-                            System.out.print("Оценка за ответ " + b + "\n");
+                            incl[num_mass] = true;
+                            int mark = (int) (Math.random() * 10);
+                            grades[num_mass] = mark;
+                            System.out.print("Оценка за ответ " + mark + "\n");
                         } else {
-                            incl[a] = false;
+                            incl[num_mass] = false;
                             System.out.print("Студента нет на паре, введите /h для помощи" + "\n");
                         }
-                        answer[a] = true;
+                        answer[num_mass] = true;
                     } else {
                         System.out.print("Студент уже отвечал, введите /h для помощи \n");
                     }
